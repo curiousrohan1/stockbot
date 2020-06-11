@@ -1,6 +1,6 @@
 # stockbot
 
-# Schema
+## Schema
 ```
 CREATE TABLE `Quotes` ( 
     `date` TEXT NOT NULL, 
@@ -11,3 +11,6 @@ CREATE TABLE `Quotes` (
 
 CREATE INDEX `i_symbol` ON `Quotes` ( `symbol` ASC, `date` ASC )
 ```
+
+## Configuration
+Copy the stockbot.properties.template to stockbot.properties and edit the properties to fit your environment.

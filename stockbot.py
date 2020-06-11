@@ -3,13 +3,17 @@ from datetime import datetime
 import time
 import yfinance as yf
 import sqlite3
+import configparser
 
 yf.pdr_override()
 # noinspection SpellCheckingInspection
 tickers = ['HTZ', 'LK', 'OAS', 'XSPA', 'VAL', 'VISL', 'GNUS', 'NE', 'FRSX', 'GCI',
            'SRNE', 'LTM', 'DGLY', 'TUES', 'BIOL', 'CBL', 'CIDM', 'MARK', 'CHAP', 'NSPR']
+
+config = configparser.ConfigParser()
+config.read('stockbot.properties')
 # noinspection SpellCheckingInspection
-conn = sqlite3.connect('../../Documents/stockbot')
+conn = sqlite3.connect(config.get('main', 'dbFile'))
 
 
 def get_data(ticker_list):

@@ -1,0 +1,2 @@
+[main]
+dbFile=<Absolute path to stockbot sqlite3 db>
